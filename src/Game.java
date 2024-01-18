@@ -1,4 +1,4 @@
-public abstract  class Game {
+public  abstract class Game {
     private  String [][] gameBoard = new String[5][5];
     private Type playerType;
     private void printBoard (){
@@ -44,5 +44,3 @@ public abstract  class Game {
     }
 
 }
-
-
