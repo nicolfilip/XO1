@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+//Nicol Filipchuk 206637985 and Yuval Malka 315402669
 public  abstract class Game {
     protected char[][] gameBoard = new char[5][5];
     protected char playerTypeTurn;

@@ -1,3 +1,4 @@
+//Nicol Filipchuk 206637985 and Yuval Malka 315402669
 public class UserGame extends Game {
     public void placePlayerTypeInCell(int row, int col, char playerTypeTurn) {
         gameBoard[row][col] = playerTypeTurn;

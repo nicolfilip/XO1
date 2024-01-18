@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+//Nicol Filipchuk 206637985 and Yuval Malka 315402669
 public class SelfPlayer extends Player implements Runnable {
     private Game game;
     public SelfPlayer(char playerType, Game game){

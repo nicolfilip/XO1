@@ -1,3 +1,4 @@
+//Nicol Filipchuk 206637985 and Yuval Malka 315402669
 public class Cell {
     private int row;
     private int col;
