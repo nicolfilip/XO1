@@ -1,7 +1,11 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public  abstract class Game {
-    private  String [][] gameBoard = new String[5][5];
+    private char [][] gameBoard = new char[5][5];
     private Type playerType;
-    private void printBoard (){
+    private Cell cell;
+    public void printBoard(){
         for (int i = 0; i<5 ; i++ ){
             for (int j = 0; j<5; j++){
                 System.out.println(gameBoard[i][j]+ " ");
@@ -13,21 +17,24 @@ public  abstract class Game {
         X , O
     }
 
-    private Type getTurn (){
+    public Type getTurn (){
         return playerType;
     }
 
-    private void getFreeCells(){
+    public List <Cell> getFreeCells(){
+        List<Cell> freeCells= new ArrayList<>();
         for (int i=0;i<5;i++){
             for (int j=0;j<5;j++){
-                if (gameBoard[i][j]==null){
-                    System.out.println("("+i+","+j+")\n");
+                if (gameBoard[i][j]==0){
+                    freeCells.add(new Cell(i,j));
                 }
             }
         }
+        return freeCells;
     }
+    public abstract boolean isBoardFull();
 
-    public void setGameBoard(String[][] gameBoard) {
+    public void setGameBoard(char[][] gameBoard) {
         this.gameBoard = gameBoard;
     }
 
@@ -39,8 +46,14 @@ public  abstract class Game {
         this.playerType = playerType;
     }
 
-    public String[][] getGameBoard() {
+    public char[][] getGameBoard() {
         return gameBoard;
     }
+    public void  makeCell(Cell cell, Type playerType){
+        gameBoard[cell.getRow()][cell.getCol()]= (playerType== playerType.X) ? 'X' : 'O';
+    }
+                }
 
-}
+
+
+
