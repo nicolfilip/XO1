@@ -1,15 +1,13 @@
 public abstract class Player {
-    private Game game;
-    private Game.Type playerType;
+    private char playerType;
 
-    public Player (Game.Type playerType){
+    public Player(char playerType){
         this.playerType= playerType;
     }
-//    public boolean checkThePlayerTurn(){
-//        if (playerType== playerType.X){
-//            return true;
-//        }
-//        return false;
-//    }
-    public abstract boolean checkTurn();
+
+    public char getPlayerType() {
+        return playerType;
+    }
+    public abstract void chooseGame(Game game);
+
 }
