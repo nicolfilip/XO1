@@ -42,5 +42,5 @@ public  abstract class Game {
     public String[][] getGameBoard() {
         return gameBoard;
     }
-    
+
 }
