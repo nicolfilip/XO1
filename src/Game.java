@@ -16,6 +16,7 @@ public  abstract class Game {
     public void setPlayerTypeTurn(char playerTypeTurn) {
         this.playerTypeTurn = playerTypeTurn;
     }
+    // check the free cells and put them in array
     public List <Cell> getFreeCells(){
         List <Cell> freeCells= new ArrayList<>();
         for (int i=0; i<5; i++){
@@ -27,6 +28,7 @@ public  abstract class Game {
         }
         return freeCells;
     }
+    // check if the input is true
     public boolean checkCell(int row, int col){
         if ((row<0 || row>=5) || (col<0 ||col>=5) || gameBoard[row][col]!=0){
             return false;

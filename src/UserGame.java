@@ -1,5 +1,6 @@
 //Nicol Filipchuk 206637985 and Yuval Malka 315402669
 public class UserGame extends Game {
+    // if the X thread play now, then after replace to the O thread
     public void placePlayerTypeInCell(int row, int col, char playerTypeTurn) {
         gameBoard[row][col] = playerTypeTurn;
         if (playerTypeTurn == 'X') {

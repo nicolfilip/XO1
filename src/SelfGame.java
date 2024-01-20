@@ -21,7 +21,7 @@ public class SelfGame extends Game {
         }
         System.out.println();
     }
-
+// check if the board is full
     @Override
     public boolean isBoardFull() {
         for (int i = 0; i < 5; i++) {

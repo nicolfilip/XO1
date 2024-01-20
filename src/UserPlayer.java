@@ -14,7 +14,7 @@ public class UserPlayer extends Player implements Runnable {
 
     public void run() {
         try {
-            Thread.sleep(500);
+            Thread.sleep(500); //sleep
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -25,8 +25,8 @@ public class UserPlayer extends Player implements Runnable {
                 int row = scanner.nextInt();
                 System.out.println("Enter column between 0-4: ");
                 int col = scanner.nextInt();
-                if (game.checkCell(row, col)) {
-                    game.placePlayerTypeInCell(row, col, getPlayerType());
+                if (game.checkCell(row, col)) { //if the choice of the cell is correct then
+                    game.placePlayerTypeInCell(row, col, getPlayerType()); // put the player's type in the cell that the user choose
                     game.printBoard();
                 } else {
                     System.out.println("Invalid move, please try again :)");
