@@ -1,17 +1,18 @@
 import java.util.Scanner;
 //Nicol Filipchuk 206637985 and Yuval Malka 315402669
 public class SelfGame extends Game {
-    public void placePlayerTypeInCell(int row, int col, char playerTypeTurn) {
+    public synchronized void placePlayerTypeInCell(int row, int col, char playerTypeTurn) {
         gameBoard[row][col] = playerTypeTurn;
         if (playerTypeTurn == 'X') {
             setPlayerTypeTurn('O');
         } else {
             setPlayerTypeTurn('X');
         }
+
     }
 
     @Override
-    public void printBoard() {
+    public synchronized void  printBoard() {
         System.out.println("Current board: ");
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
@@ -23,7 +24,7 @@ public class SelfGame extends Game {
     }
 // check if the board is full
     @Override
-    public boolean isBoardFull() {
+    public synchronized boolean isBoardFull() {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 if (gameBoard[i][j] == 0) {
@@ -36,7 +37,7 @@ public class SelfGame extends Game {
     }
 
     @Override
-    public boolean checkifThereIsWinner() {
+    public synchronized boolean checkifThereIsWinner() {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 2; j++) {
                 if (gameBoard[i][j] != 0 &&

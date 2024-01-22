@@ -1,7 +1,7 @@
 //Nicol Filipchuk 206637985 and Yuval Malka 315402669
 public class UserGame extends Game {
     // if the X thread play now, then after replace to the O thread
-    public void placePlayerTypeInCell(int row, int col, char playerTypeTurn) {
+    public synchronized void placePlayerTypeInCell(int row, int col, char playerTypeTurn) {
         gameBoard[row][col] = playerTypeTurn;
         if (playerTypeTurn == 'X') {
             setPlayerTypeTurn('O');
@@ -9,8 +9,9 @@ public class UserGame extends Game {
             setPlayerTypeTurn('X');
         }
     }
+
     @Override
-    public void printBoard() {
+    public synchronized void printBoard() {
         System.out.println("Current board: ");
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
@@ -21,7 +22,7 @@ public class UserGame extends Game {
         System.out.println();
     }
     @Override
-    public boolean isBoardFull() {
+    public synchronized boolean isBoardFull() {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 if (gameBoard[i][j] == 0) {
@@ -32,7 +33,7 @@ public class UserGame extends Game {
         System.out.println("Board is full, try next time :)");
         return true;
     }
-    public boolean checkifThereIsWinner() {
+    public synchronized boolean checkifThereIsWinner() {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 2; j++) {
                 if (gameBoard[i][j] != 0 &&
